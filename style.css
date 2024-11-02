@@ -1,0 +1,177 @@
+.center {
+  width: 600px;
+  height: 200px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  height: calc(100vh - 20px);
+  gap: 2px;
+  justify-content: space-around;
+}
+
+.scroll-text {
+  white-space: nowrap;
+  position: relative;
+  width: 100vw;
+  overflow: hidden;
+  flex-shrink: 0;
+  height: auto;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.scroll-text span {
+  display: inline-block;
+  animation: scroll-left linear infinite;
+  padding-left: 100%;
+  transform-origin: center;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* 字体大小类 - 只保留使用的 */
+.text-size-20px {
+  font-size: 20px;
+}
+.text-size-32px {
+  font-size: 32px;
+}
+.text-size-84px {
+  font-size: 84px;
+}
+.text-size-240px {
+  font-size: 240px;
+  opacity: 0.5;
+  line-height: 1;
+  margin: 0;
+}
+
+/* 速度类 - 只保留使用的 */
+.speed-3_5s span {
+  animation-duration: 3.5s;
+}
+.speed-4s span {
+  animation-duration: 4s;
+}
+.speed-4_5s span {
+  animation-duration: 4.5s;
+}
+.speed-5s span {
+  animation-duration: 5s;
+}
+.speed-6s span {
+  animation-duration: 6s;
+}
+.speed-6_5s span {
+  animation-duration: 6.5s;
+}
+.speed-7s span {
+  animation-duration: 7s;
+}
+.speed-7_5s span {
+  animation-duration: 7.5s;
+}
+.speed-8s span {
+  animation-duration: 8s;
+}
+.speed-9s span {
+  animation-duration: 9s;
+}
+.speed-10s span {
+  animation-duration: 10s;
+}
+.speed-11s span {
+  animation-duration: 11s;
+}
+.speed-13s span {
+  animation-duration: 13s;
+}
+.speed-16s span {
+  animation-duration: 16s;
+}
+
+/* 中央文字动画 */
+.box {
+  display: flex;
+  align-items: center;
+  font-size: 72px;
+  font-weight: bold;
+}
+
+.box span {
+  display: inline-block;
+  font-size: 5rem;
+  position: relative;
+  top: 20px;
+  z-index: 1;
+  animation: bounce 0.3s ease infinite alternate, colorChange 5s linear infinite;
+}
+
+@keyframes colorChange {
+  0% {
+    color: #ff1493;
+  }
+  20% {
+    color: #4169e1;
+  }
+  40% {
+    color: #32cd32;
+  }
+  60% {
+    color: #ff8c00;
+  }
+  80% {
+    color: #9370db;
+  }
+  100% {
+    color: #ff1493;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    text-shadow: #fff6 0 0 0.05em;
+    transform: translateZ(0);
+  }
+  100% {
+    text-shadow: #fff6 0 1em 0.35em;
+    transform: translate3d(0, -0.5em, 0);
+  }
+}
+
+.box span:nth-child(n + 7) {
+  margin-left: 2px;
+}
+
+.center a {
+  text-decoration: none;
+}
